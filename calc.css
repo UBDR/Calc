@@ -1,0 +1,42 @@
+.container{
+    text-align: center;
+    margin-top: 43px;
+    box-sizing: border-box;
+}
+table{
+    margin: auto;
+}
+input{
+    font-size: 77px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    direction: rtl;
+}
+button{
+    background-color: rgb(182, 204, 243);
+    /* background: #f4f1f100; */
+    color: black;
+    width: 128px;
+    height:45px;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  
+    }
+    button:hover{
+        box-shadow: 1px 1px 10px 1px rgba(15, 188, 219, 0.651);
+        transition: all 0.2s ease 0s;
+        transform: translateY(-2px);
+    }
+.nv{
+    background-color: rgb(196, 255, 214);
+ 
+   
+}
+
+.eq{
+    background-color: rgba(137, 9, 187, 0.781);
+    box-shadow: #0d017e;
+    transition: all 0.1s ease 0s;
+}
