@@ -2,6 +2,7 @@
     text-align: center;
     margin-top: 43px;
     box-sizing: border-box;
+    background-color: burlywood;
 }
 table{
     margin: auto;
@@ -37,6 +38,11 @@ button{
 
 .eq{
     background-color: rgba(137, 9, 187, 0.781);
+    box-shadow: #0d017e;
+    transition: all 0.1s ease 0s;
+}
+#reset{
+    background-color: rgb(227, 10, 235);
     box-shadow: #0d017e;
     transition: all 0.1s ease 0s;
 }
