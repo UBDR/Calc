@@ -11,7 +11,8 @@ input{
     font-size: 77px;
     border-radius: 10px;
     border: 1px solid grey;
-    direction: rtl;
+    /* direction: rtl; */
+    text-align: right;
 }
 button{
     background-color: rgb(182, 204, 243);
