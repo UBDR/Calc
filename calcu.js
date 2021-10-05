@@ -29,8 +29,26 @@ for(let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', this.onClickButton);
 }
 
+//Keyboard Input
+window.addEventListener('keypress', function(event) {
+    console.log("function in it")
+    let keycode = event.which || event.keyCode;
+    let valueEntered = String.fromCharCode(keycode);
+    console.log(event);
+    console.log(valueEntered);
+    let data = replaceDefaultZero(input.value,valueEntered);
+
+    if(data === true) {
+        return;
+    }
+    let x = input.value + valueEntered;
+    console.log("Final value is = ",x);
+    input.value =x;
+});
+
 
 function onClickButton(event) {
+    console.log(event);
     let data = replaceDefaultZero(input.value, event.target.value);
 
     if(data === true) {
@@ -44,8 +62,9 @@ function onClickButton(event) {
         if(event.target.id === "reset") {
             onClickClearButton();
         }
-    
-        if(event.target.id === "add") {
+    //Arithmetic Operation Condition Starts
+
+        if(event.target.id === "add") { //Addition
             if(number1 == 0) {
                 number1 = input.value;
             } else {
@@ -55,12 +74,80 @@ function onClickButton(event) {
 
             if(number1 != 0 && number2 != 0) {
                 doSum();
-            } else {
-                input.value = '';
             }
+           
+                else{
+
+                    input.value = '';
+                }
+            }
+            
+
+
+            if(event.target.id === "sub") { //Subtraction
+            if(number1 == 0) {
+                number1 = input.value;
+            } else {
+                number2 = input.value;
+            }
+            operation = 'SUB';
+
+            if(number1 != 0 && number2 != 0) {
+                doSub();
+            }
+           
+                else{
+
+                    input.value = '';
+                }
+            }
+            
+            
+
+            if(event.target.id === "mult") { //Multiplication
+            if(number1 == 0) {
+                number1 = input.value;
+            } else {
+                number2 = input.value;
+            }
+            operation = 'MULT';
+
+            if(number1 != 0 && number2 != 0) {
+                doMult();
+            }
+           
+                else{
+
+                    input.value = '';
+                }
+            }
+            
+            
+            
+            if(event.target.id === "divide") { //Division
+            if(number1 == 0) {
+                number1 = input.value;
+            } else {
+                number2 = input.value;
+            }
+            operation = 'DIV';
+
+            if(number1 != 0 && number2 != 0) {
+                doSub();
+            }
+           
+                else{
+
+                    input.value = '';
+                }
+            }
+
+
+
+
         }
 
-        if(event.target.id === 'equal') {
+            if(event.target.id === 'equal') {
             if(number1 != 0) {
                 number2 = input.value;
             }
@@ -71,7 +158,7 @@ function onClickButton(event) {
     
     }
 
-}
+
 
 function replaceDefaultZero(defaultValue, newValue) {
     let result = false;
@@ -97,13 +184,36 @@ function doSum() {
     input.value = Number(number1) + Number(number2);
 }
 
+function doSub() {
+    input.value = Number(number1) - Number(number2);
+}
+
+function doMult() {
+    input.value = Number(number1) * Number(number2);
+}
+
+function doDiv() {
+    input.value = Number(number1) / Number(number2);
+}
+
+
+
 function doEvaluation() {
     if(operation === 'ADD') {
         doSum();
     }
+    else if(operation === 'SUB'){
+        doSub();
+    }
+    else if(operation === 'MULT'){
+        doMult();
+    }
+    else if(operation === 'DIV'){
+        doDiv();
+    }
     clearGlobalVariables();
-}
 
+}
 
 
 
